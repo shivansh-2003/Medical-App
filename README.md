@@ -1,1 +1,1 @@
-Medical Appp
+Medical App
