@@ -44,3 +44,7 @@ def main():
                                      Fatigue, Allergy, Wheezling, Alcohol_Consumption, Coughing,
                                      Shortness_Of_Breath, Swallowing_difficulty, Chest_Pain])
         st.success(diagnosis)
+
+
+if __name__ == '__main__':
+    main()
