@@ -3,7 +3,7 @@ import streamlit as st
 import joblib
 from xgboost import XGBClassifier
 
-loaded_model = joblib.load('/Users/shivanshmahajan/Desktop/Medical App/combined/Pages/heart_disease_model.joblib')
+loaded_model = joblib.load('/Users/shivanshmahajan/Desktop/DataScinece/project/Medical App/combined/Pages/heart_disease_model.joblib')
 
 def Heart_prediction(input_data):
     input_data = np.asarray(input_data, dtype=np.float32)  # Convert input data to float
@@ -18,7 +18,7 @@ def Heart_prediction(input_data):
 
 def main():
     st.title("Heart Failure Prediction Web App")
-    image_path ='/Users/shivanshmahajan/Desktop/Medical App/combined/Images/Anatomy-of-the-heart.jpeg'
+    image_path ='/Users/shivanshmahajan/Desktop/DataScinece/project/Medical App/combined/Images/Anatomy-of-the-heart.jpeg'
     st.image(image_path, use_column_width=True)
     Age = st.text_input('Age')
     Sex = st.text_input('Sex')

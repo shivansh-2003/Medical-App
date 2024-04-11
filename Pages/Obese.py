@@ -3,7 +3,7 @@ import streamlit as st
 import joblib
 from xgboost import XGBClassifier
 
-loaded_model = joblib.load('/Users/shivanshmahajan/Desktop/Medical App/combined/Pages/obesity.joblib')
+loaded_model = joblib.load('/Users/shivanshmahajan/Desktop/DataScinece/project/Medical App/combined/Pages/obesity.joblib')
 
 
 def obese_prediction(input_data):
@@ -23,7 +23,7 @@ def obese_prediction(input_data):
 
 def main():
     st.title("Obese Prediction Web App")
-    image_path = '/Users/shivanshmahajan/Desktop/Medical App/combined/Images/download.png'
+    image_path = '/Users/shivanshmahajan/Desktop/DataScinece/project/Medical App/combined/Images/download.png'
     st.image(image_path, use_column_width=True)
 
     Age = st.text_input('Age')

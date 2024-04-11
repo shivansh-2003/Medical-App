@@ -3,7 +3,7 @@ import streamlit as st
 import joblib
 from xgboost import XGBClassifier
 
-loaded_model = joblib.load('/Users/shivanshmahajan/Desktop/Lung/Lung_Cancer_model.joblib')
+loaded_model = joblib.load('/Users/shivanshmahajan/Desktop/DataScinece/project/Medical App/combined/Pages/Lung_Cancer_model.joblib')
 
 
 def Lung_prediction(input_data):
@@ -20,30 +20,27 @@ def Lung_prediction(input_data):
 
 def main():
     st.title("Lung Cancer Prediction Web App")
-    image_path = '/Users/shivanshmahajan/Desktop/Medical App/combined/Images/images.jpeg'
+    image_path = '/Users/shivanshmahajan/Desktop/DataScinece/project/Medical App/combined/Images/images.jpeg'
     st.image(image_path, use_column_width=True)
-    Gender = st.text_input('GENDER')
+    Gender = st.radio('GENDER', ['Male', 'Female'])
     Age = st.text_input('AGE')
-    Smoke = st.text_input('SMOKING')
-    Yellow_Fingers = st.text_input('YELLOW_FINGERS')
-    Anxiety = st.text_input('ANXIETY')
-    Peer_Pressure = st.text_input('PEER_PRESSURE')
-    Chronic_Disease = st.text_input('CHRONIC DISEASE')
-    Fatigue = st.text_input('FATIGUE')
-    Allergy = st.text_input('ALLERGY')
-    Wheezling = st.text_input('WHEEZING')
-    Alcohol_Consumption = st.text_input('ALCOHOL CONSUMING')
-    Coughing = st.text_input('COUGHING')
-    Shortness_Of_Breath = st.text_input('SHORTNESS OF BREATH')
-    Swallowing_difficulty = st.text_input('SWALLOWING DIFFICULTY')
-    Chest_Pain = st.text_input('CHEST PAIN')
-
+    Smoke = st.radio('SMOKING', ['Yes', 'No'])
+    Yellow_Fingers = st.radio('YELLOW_FINGERS', ['Yes', 'No'])
+    Anxiety = st.radio('ANXIETY', ['Yes', 'No'])
+    Peer_Pressure = st.radio('PEER_PRESSURE', ['Yes', 'No'])
+    Chronic_Disease = st.radio('CHRONIC DISEASE', ['Yes', 'No'])
+    Fatigue = st.radio('FATIGUE', ['Yes', 'No'])
+    Allergy = st.radio('ALLERGY', ['Yes', 'No'])
+    Wheezling = st.radio('WHEEZING', ['Yes', 'No'])
+    Alcohol_Consumption = st.radio('ALCOHOL CONSUMING', ['Yes', 'No'])
+    Coughing = st.radio('COUGHING', ['Yes', 'No'])
+    Shortness_Of_Breath = st.radio('SHORTNESS OF BREATH', ['Yes', 'No'])
+    Swallowing_difficulty = st.radio('SWALLOWING DIFFICULTY', ['Yes', 'No'])
+    Chest_Pain = st.radio('CHEST PAIN', ['Yes', 'No'])
 
     # creating a button for Prediction
     if st.button('Lung Cancer Test Result'):
-        diagnosis = Lung_prediction([Gender,Age,Smoke,Yellow_Fingers,Anxiety,Peer_Pressure,Chronic_Disease,Fatigue,Allergy,Wheezling,Alcohol_Consumption,Coughing,Shortness_Of_Breath,Swallowing_difficulty,Chest_Pain])
+        diagnosis = Lung_prediction([Gender, Age, Smoke, Yellow_Fingers, Anxiety, Peer_Pressure, Chronic_Disease,
+                                     Fatigue, Allergy, Wheezling, Alcohol_Consumption, Coughing,
+                                     Shortness_Of_Breath, Swallowing_difficulty, Chest_Pain])
         st.success(diagnosis)
-
-
-if __name__ == '__main__':
-    main()
